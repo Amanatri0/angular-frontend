@@ -1,0 +1,14 @@
+<div class="productContainer">
+  <div>
+    <h1>{{ category() }}</h1>
+
+    @if (isLoading()) {
+    <h1>Loading.....</h1>
+    }
+    <div class="productGrid">
+      @for (product of filteredProducts(); track product.productid) {
+      <app-product-card [product]="product" />
+      }
+    </div>
+  </div>
+</div>

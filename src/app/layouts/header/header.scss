@@ -1,6 +1,7 @@
 header {
-  padding: 2.5rem 0;
+  padding: 1rem 0;
   box-shadow: 0px 0px 10px 0px #888888;
+  z-index: 10;
 
   > div {
     max-width: 1200px;
@@ -14,17 +15,35 @@ header {
     }
 
     nav {
-      font-size: 1.3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       a {
         text-decoration: none;
         padding-left: 1.5rem;
         color: #888888;
         transition: all 0.3s ease;
-        &:active {
-          color: red;
-        }
         &:hover {
           color: #353434;
+          scale: 0.9;
+        }
+      }
+
+      button {
+        padding: 1rem 2rem;
+        margin-left: 1rem;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        &:active {
+          scale: 0.9;
+        }
+        &:hover {
+          color: #ffffff;
+          background-color: rgb(55, 170, 208);
         }
       }
     }

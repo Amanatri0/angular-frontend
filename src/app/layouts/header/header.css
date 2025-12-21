@@ -1,6 +1,7 @@
 header {
-  padding: 2.5rem 0;
+  padding: 1rem 0;
   box-shadow: 0px 0px 10px 0px #888888;
+  z-index: 10;
 }
 header > div {
   max-width: 1200px;
@@ -13,7 +14,9 @@ header > div > h1 {
   font-size: 2.5rem;
 }
 header > div nav {
-  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 header > div nav a {
   text-decoration: none;
@@ -21,11 +24,25 @@ header > div nav a {
   color: #888888;
   transition: all 0.3s ease;
 }
-header > div nav a:active {
-  color: red;
-}
 header > div nav a:hover {
   color: #353434;
+  scale: 0.9;
+}
+header > div nav button {
+  padding: 1rem 2rem;
+  margin-left: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+header > div nav button:active {
+  scale: 0.9;
+}
+header > div nav button:hover {
+  color: #ffffff;
+  background-color: rgb(55, 170, 208);
 }
 
 @media screen and (max-width: 800px) {

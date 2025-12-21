@@ -1,0 +1,67 @@
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  height: 550px;
+  background-color: #ffffff;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 2rem 0;
+  transition: all 0.3s ease;
+}
+.productDetails:hover {
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.productDetails img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-start-start-radius: 10px;
+}
+.productDetails .productBottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  font-size: 1.3rem;
+  gap: 1rem;
+}
+.productDetails .productBottom .details {
+  gap: 1rem;
+}
+.productDetails .productBottom .details p {
+  color: #959595;
+  margin-top: 0.5rem;
+  letter-spacing: 1.5px;
+  line-height: 2rem;
+}
+.productDetails .productBottom .details .stockCount {
+  font-size: 1rem;
+}
+.productDetails .productBottom .productPriceAndButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.productDetails .productBottom .productPriceAndButton h4 {
+  font-size: 2rem;
+}
+.productDetails .productBottom .productPriceAndButton button {
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.productDetails .productBottom .productPriceAndButton button:hover {
+  scale: 1.1;
+}
+.productDetails .productBottom .productPriceAndButton button:active {
+  scale: 1;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}/*# sourceMappingURL=product-card.css.map */

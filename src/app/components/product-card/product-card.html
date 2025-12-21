@@ -1,0 +1,25 @@
+<div class="productDetails">
+  <div>
+    <img [src]="'http://localhost:5198' + product().imageUrl" [alt]="product().productname" />
+  </div>
+  <div class="productBottom">
+    <div class="details">
+      <h3>{{ product().productname }}</h3>
+      <p>{{ product().productdesc }}</p>
+      <div class="stockCount">
+        @if (product().stock <= 0) {
+        <span class="red"> Out of Stock </span>
+        } @else {
+        <span class="green"> In Stock </span>
+        }
+      </div>
+    </div>
+    <div class="productPriceAndButton">
+      <h4>₹ {{ product().price }}</h4>
+      <button matButton="filled" class="productButton">
+        <mat-icon>shopping_cart</mat-icon>
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>

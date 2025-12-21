@@ -1,0 +1,18 @@
+.productContainer {
+  background-color: rgba(234, 233, 233, 0.532);
+  padding: 1rem 5rem;
+  // height: 100%;
+  // overflow: auto;
+  > div {
+    height: 100%;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .productGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1rem;
+  }
+}
