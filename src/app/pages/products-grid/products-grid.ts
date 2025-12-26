@@ -1,59 +1,33 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
+import { Component, effect, inject, input, OnInit } from '@angular/core';
 import { ProductCard } from '../../components/product-card/product-card';
-import { Products } from '../../model/productTypes';
+import { EcommerceStore } from '../../ecommerceStore';
+import { TitleCasePipe } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
+import Wishlist from '../wishlist/wishlist';
+import { ToggleWishlistButton } from '../../components/toggle-wishlist-button/toggle-wishlist-button';
 
 @Component({
   selector: 'app-products-grid',
   standalone: true,
-  imports: [ProductCard],
+  imports: [ProductCard, TitleCasePipe, ToggleWishlistButton],
   templateUrl: './products-grid.html',
   styleUrl: './products-grid.scss',
 })
-export default class ProductsGrid {
-  private http = inject(HttpClient);
-
-  private apiUrl = 'http://localhost:5198/api/product/all';
+export default class ProductsGrid implements OnInit {
+  readonly store = inject(EcommerceStore);
 
   category = input<string>('');
 
-  products = signal<Products[]>([]);
-
-  isLoading = signal<boolean>(true);
-
-  filteredProducts = computed(() => {
-    const currentCategory = this.category();
-    const allProdcuts = this.products();
-
-    if (currentCategory === 'all') {
-      return allProdcuts;
-    }
-
-    return allProdcuts.filter((p) => p.category === currentCategory);
-  });
-
-  ngOnInit() {
-    this.fetchProducts();
+  constructor() {
+    effect(() => {
+      this.store.updateCategory(this.category());
+    });
   }
 
-  fetchProducts() {
-    this.isLoading.set(true);
-
-    this.http.get<{ message: string; data: Products[] }>(this.apiUrl).subscribe({
-      next: (response) => {
-        if (response && response.data) {
-          this.products.set(response.data);
-        } else {
-          console.warn('Response received but data array is missing:', response);
-          this.products.set([]);
-        }
-
-        this.isLoading.set(false);
-      },
-      error: (err) => {
-        console.error('API Error:', err);
-        this.isLoading.set(false);
-      },
-    });
+  ngOnInit() {
+    if (this.store.products().length == 0) {
+      this.store.loadProducts();
+      console.log(this.store.loadProducts());
+    }
   }
 }

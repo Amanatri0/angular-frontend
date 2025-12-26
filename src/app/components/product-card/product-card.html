@@ -1,7 +1,6 @@
 <div class="productDetails">
-  <div>
-    <img [src]="'http://localhost:5198' + product().imageUrl" [alt]="product().productname" />
-  </div>
+  <img [src]="'http://localhost:5198' + product().imageUrl" [alt]="product().productname" />
+  <ng-content />
   <div class="productBottom">
     <div class="details">
       <h3>{{ product().productname }}</h3>
@@ -16,7 +15,7 @@
     </div>
     <div class="productPriceAndButton">
       <h4>₹ {{ product().price }}</h4>
-      <button matButton="filled" class="productButton">
+      <button matButton="filled" class="productButton" (click)="store.addToCart(product())">
         <mat-icon>shopping_cart</mat-icon>
         Add to Cart
       </button>

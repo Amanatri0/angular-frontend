@@ -5,6 +5,8 @@
 // custom components at https://material.angular.dev/guide/theming
 
 @use '@angular/material' as mat;
+/* Importing @ngxpert/hot-toast SCSS file. */
+@use '@ngxpert/hot-toast/styles';
 
 * {
   padding: 0;

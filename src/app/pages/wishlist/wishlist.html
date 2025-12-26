@@ -1,1 +1,25 @@
-<p>wishlist works!</p>
+<div class="wishlistContainer">
+  <app-back-button navigateTo="/products/all"> Continue Shopping </app-back-button>
+
+  @if (store.wishlistCount() > 0) {
+  <div class="wishlistHeading">
+    <h1>My Wishlist</h1>
+    <span class="wishlistItemsCount">{{ store.wishlistCount() }} items </span>
+  </div>
+
+  <div class="productGrid">
+    @for (product of store.wishlistItems(); track product) {
+    <app-product-card [product]="product">
+      <button matIconButton class="deleteButton" (click)="store.removeFromWishlist(product)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </app-product-card>
+    }
+  </div>
+  <div class="clearWishlistButton">
+    <button matButton="outlined" (click)="store.clearWishlist()">Clear Wishlist</button>
+  </div>
+  }@else {
+  <!-- Add something that shows your wishlist is empty, and a button to take you back to the product page -->
+  }
+</div>

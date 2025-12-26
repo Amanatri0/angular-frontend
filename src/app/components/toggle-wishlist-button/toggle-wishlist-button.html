@@ -1,0 +1,7 @@
+<button
+  matIconButton
+  [class]="inWishList() ? 'wishlistButton red' : 'wishlistButton'"
+  (click)="toggleWishlist(product())"
+>
+  <mat-icon> {{ inWishList() ? 'favorite' : 'favorite_border' }}</mat-icon>
+</button>

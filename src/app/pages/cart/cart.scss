@@ -1,0 +1,23 @@
+.cartContainer {
+  margin: auto;
+  max-width: 1200px;
+  padding: 2rem 1.5rem;
+
+  .cartHeading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem 0.5rem;
+
+    .cartItemsCount {
+      color: rgb(162, 162, 162);
+      font-size: 1rem;
+    }
+  }
+
+  .cartGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+}

@@ -1,7 +1,8 @@
-import { Component, input } from '@angular/core';
-import ProductsGrid, { Products } from '../../pages/products-grid/products-grid';
-import { MatAnchor, MatButton } from '@angular/material/button';
+import { Component, computed, inject, input, output } from '@angular/core';
+import { MatAnchor, MatButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
+import { Products } from '../../model/productTypes';
+import { EcommerceStore } from '../../ecommerceStore';
 
 @Component({
   selector: 'app-product-card',
@@ -11,4 +12,6 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class ProductCard {
   product = input.required<Products>();
+
+  store = inject(EcommerceStore);
 }

@@ -1,1 +1,15 @@
-<p>cart works!</p>
+<div class="cartContainer">
+  <app-back-button navigateTo="/products/all"> Continue Shopping </app-back-button>
+  <!-- @if () { -->
+  <div class="cartHeading">
+    <h1>Shopping Cart</h1>
+    <span class="cartItemsCount"></span>
+  </div>
+
+  <div class="cartGrid">
+    <div class="cartGrid2">
+      <app-list-cart-items></app-list-cart-items>
+    </div>
+  </div>
+  <!-- } -->
+</div>

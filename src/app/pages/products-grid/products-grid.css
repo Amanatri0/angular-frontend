@@ -1,15 +1,21 @@
 .productContainer {
   background-color: rgba(234, 233, 233, 0.532);
-  padding: 1rem 5rem;
+  padding: 2rem 5rem;
 }
 .productContainer > div {
   height: 100%;
 }
-.productContainer h1 {
+.productContainer > div .productLength {
+  color: rgb(154, 154, 154);
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 1rem 0;
+}
+.productContainer > div h1 {
   font-size: 2rem;
   font-weight: bold;
 }
-.productContainer .productGrid {
+.productContainer > div .productGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 1rem;

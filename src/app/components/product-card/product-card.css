@@ -8,6 +8,7 @@
   overflow: hidden;
   margin: 2rem 0;
   transition: all 0.3s ease;
+  position: relative;
 }
 .productDetails:hover {
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
@@ -19,7 +20,8 @@
      object-fit: cover;
   border-start-start-radius: 10px;
 }
-.productDetails .productBottom {
+
+.productBottom {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,34 +29,34 @@
   font-size: 1.3rem;
   gap: 1rem;
 }
-.productDetails .productBottom .details {
+.productBottom .details {
   gap: 1rem;
 }
-.productDetails .productBottom .details p {
+.productBottom .details p {
   color: #959595;
   margin-top: 0.5rem;
   letter-spacing: 1.5px;
   line-height: 2rem;
 }
-.productDetails .productBottom .details .stockCount {
+.productBottom .details .stockCount {
   font-size: 1rem;
 }
-.productDetails .productBottom .productPriceAndButton {
+.productBottom .productPriceAndButton {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.productDetails .productBottom .productPriceAndButton h4 {
+.productBottom .productPriceAndButton h4 {
   font-size: 2rem;
 }
-.productDetails .productBottom .productPriceAndButton button {
+.productBottom .productPriceAndButton button {
   font-size: 1rem;
   transition: all 0.3s ease;
 }
-.productDetails .productBottom .productPriceAndButton button:hover {
+.productBottom .productPriceAndButton button:hover {
   scale: 1.1;
 }
-.productDetails .productBottom .productPriceAndButton button:active {
+.productBottom .productPriceAndButton button:active {
   scale: 1;
 }
 

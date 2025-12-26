@@ -1,13 +1,15 @@
 <div class="productContainer">
   <div>
-    <h1>{{ category() }}</h1>
-
-    @if (isLoading()) {
+    <h1>{{ category() | titlecase }}</h1>
+    <p class="productLength">{{ store.filteredProducts().length }} product found</p>
+    @if (store.isLoading()) {
     <h1>Loading.....</h1>
     }
     <div class="productGrid">
-      @for (product of filteredProducts(); track product.productid) {
-      <app-product-card [product]="product" />
+      @for (product of store.filteredProducts(); track product.productid) {
+      <app-product-card [product]="product">
+        <app-toggle-wishlist-button [product]="product" />
+      </app-product-card>
       }
     </div>
   </div>
