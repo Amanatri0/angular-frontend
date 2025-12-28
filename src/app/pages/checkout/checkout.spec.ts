@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Cart } from './cart';
+import { Checkout } from './checkout';
 
-describe('Cart', () => {
-  let component: Cart;
-  let fixture: ComponentFixture<Cart>;
+describe('Checkout', () => {
+  let component: Checkout;
+  let fixture: ComponentFixture<Checkout>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Cart],
-    }).compileComponents();
+      imports: [Checkout]
+    })
+    .compileComponents();
 
-    fixture = TestBed.createComponent(Cart);
+    fixture = TestBed.createComponent(Checkout);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

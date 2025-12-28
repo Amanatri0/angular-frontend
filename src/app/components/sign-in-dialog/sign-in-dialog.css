@@ -1,0 +1,39 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  max-width: 400px;
+}
+.loginContainer .loginUpperContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.loginContainer .loginUpperContainer > div .heading2 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.loginContainer .loginUpperContainer > div > p {
+  font-size: 1rem;
+  color: rgb(162, 162, 162);
+}
+.loginContainer .loginUpperContainer > button {
+  margin: 1rem 2rem;
+}
+.loginContainer .input {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.loginContainer .signInbutton {
+  width: 80%;
+  border-radius: 10px;
+  margin: 0.5rem 2rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.loginContainer .signInbutton:hover {
+  scale: 1.1;
+}
+.loginContainer .signInbutton:active {
+  scale: 1;
+}/*# sourceMappingURL=sign-in-dialog.css.map */

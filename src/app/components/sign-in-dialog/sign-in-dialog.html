@@ -1,1 +1,32 @@
-<p>sign-in-dialog works!</p>
+<div class="loginContainer">
+  <div class="loginUpperContainer">
+    <div>
+      <h2 class="heading2">Sign In</h2>
+      <p>Sign in to your account to continue shopping</p>
+    </div>
+    <button matIconButton mat-dialog-close tabIndex="-1">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="input">
+      <input matInput formControlName="text" type="text" placeholder="Enter your username" />
+      <mat-icon matPrefix>person</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="input">
+      <input matInput formControlName="email" type="email" placeholder="Enter your email address" />
+      <mat-icon matPrefix>email</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="input">
+      <input
+        matInput
+        formControlName="passwordInput"
+        type="password"
+        placeholder="Enter your Password"
+      />
+      <mat-icon matPrefix>lock</mat-icon>
+    </mat-form-field>
+
+    <button class="signInbutton" type="submit" matButton="filled">Sign In</button>
+  </form>
+</div>

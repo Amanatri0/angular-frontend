@@ -1,6 +1,5 @@
 <div class="cartContainer">
   <app-back-button navigateTo="/products/all"> Continue Shopping </app-back-button>
-  <!-- @if () { -->
   <div class="cartHeading">
     <h1>Shopping Cart</h1>
     <span class="cartItemsCount"></span>
@@ -13,7 +12,14 @@
     <div>
       <app-order-summary>
         <ng-container actionButtons>
-          <button class="checkoutButton" matButton="filled">Proceed To Checkout</button>
+          <button
+            class="checkoutButton"
+            mat-flat-button
+            (click)="store.proceedToCheckout()"
+            [disabled]="store.isLoading() || store.cartItems().length === 0"
+          >
+            {{ store.isLoading() ? 'Processing...' : 'Proceed To Checkout' }}
+          </button>
         </ng-container>
       </app-order-summary>
     </div>
