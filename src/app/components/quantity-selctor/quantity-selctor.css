@@ -1,0 +1,14 @@
+.quantitySelctorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quantitySelctorContainer .quantitySelector {
+  display: inline-flex;
+  align-items: center;
+}
+.quantitySelctorContainer .quantitySelector > span {
+  padding: 0rem 2rem;
+  font-size: 1.2rem;
+  color: rgb(136, 135, 135);
+}/*# sourceMappingURL=quantity-selctor.css.map */

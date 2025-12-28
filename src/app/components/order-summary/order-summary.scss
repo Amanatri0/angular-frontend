@@ -1,0 +1,35 @@
+.gridPannel {
+  border: 1px solid rgb(203, 200, 200);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: #fff;
+  > h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+  }
+  .cartColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .orderSummaryContainer {
+    font-size: 1.5rem;
+    padding: 1rem 0rem;
+
+    .subtotal {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 0rem;
+    }
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+      border-top: 2px solid black;
+      padding-top: 1rem;
+      font-weight: bold;
+    }
+  }
+}

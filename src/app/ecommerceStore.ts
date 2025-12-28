@@ -94,6 +94,21 @@ export const EcommerceStore = signalStore(
       );
     },
 
+    setItemQuantity(params: { productId: number; quantity: number }) {
+      const index = store.cartItems().findIndex((c) => c.product.productid === params.productId);
+      const updated = produce(store.cartItems(), (draft) => {
+        draft[index].quantity = params.quantity;
+      });
+
+      patchState(store, { cartItems: updated });
+    },
+
+    removeFromCart(product: Products) {
+      patchState(store, {
+        cartItems: store.cartItems().filter((c) => c.product.productid !== product.productid),
+      });
+    },
+
     // Method to fetch products
     loadProducts: rxMethod<void>(
       pipe(

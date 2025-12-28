@@ -1,0 +1,56 @@
+.showCartItemContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  align-items: center;
+  .showCart {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: 1.5rem;
+
+    .showCartImage {
+      width: 10vw;
+      height: 14vh;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+    .showCartTexts {
+      line-height: 1.5rem;
+
+      .showCartItemName {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      .showCartItemPrice {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        color: rgb(104, 103, 103);
+      }
+    }
+  }
+  .showCartTotalPrice {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    .showCartRight {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+    .showDeleteButton {
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      &:hover {
+        scale: 1.1;
+      }
+      &:active {
+        scale: 1;
+      }
+    }
+  }
+}
+
+.red {
+  color: rgb(217, 5, 5);
+}

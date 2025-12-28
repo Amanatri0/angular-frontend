@@ -1,0 +1,54 @@
+.showCartItemContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  align-items: center;
+}
+.showCartItemContainer .showCart {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 1.5rem;
+}
+.showCartItemContainer .showCart .showCartImage {
+  width: 10vw;
+  height: 14vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
+}
+.showCartItemContainer .showCart .showCartTexts {
+  line-height: 1.5rem;
+}
+.showCartItemContainer .showCart .showCartTexts .showCartItemName {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.showCartItemContainer .showCart .showCartTexts .showCartItemPrice {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: rgb(104, 103, 103);
+}
+.showCartItemContainer .showCartTotalPrice {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.showCartItemContainer .showCartTotalPrice .showCartRight {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.showCartItemContainer .showCartTotalPrice .showDeleteButton {
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.showCartItemContainer .showCartTotalPrice .showDeleteButton:hover {
+  scale: 1.1;
+}
+.showCartItemContainer .showCartTotalPrice .showDeleteButton:active {
+  scale: 1;
+}
+
+.red {
+  color: rgb(217, 5, 5);
+}/*# sourceMappingURL=show-cart-item.css.map */

@@ -1,4 +1,8 @@
 <div appViewPannel>
-  <h2 class="heading">Cart Items {{ store.cartCount() }}</h2>
-  <div class="cartColumn"></div>
+  <h2 class="heading">Cart Items ({{ store.cartCount() }})</h2>
+  <div class="cartColumn">
+    @for (item of store.cartItems(); track item.product.productid) {
+    <app-show-cart-item [item]="item" />
+    }
+  </div>
 </div>

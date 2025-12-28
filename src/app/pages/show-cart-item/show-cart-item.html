@@ -1,0 +1,25 @@
+<div class="showCartItemContainer">
+  <div class="showCart">
+    <img [src]="'http://localhost:5198/' + item().product.imageUrl" class="showCartImage" />
+    <div class="showCartTexts">
+      <div class="showCartItemName">{{ item().product.productname }}</div>
+      <div class="showCartItemPrice">₹{{ item().product.price }}</div>
+    </div>
+  </div>
+
+  <app-quantity-selctor
+    [quantity]="item().quantity"
+    (quantityUpdated)="
+      store.setItemQuantity({ productId: item().product.productid, quantity: $event })
+    "
+  />
+
+  <div class="showCartTotalPrice">
+    <div class="showCartRight">₹ {{ total() }}</div>
+    <div class="showDeleteButton">
+      <button matIconButton class="red" (click)="store.removeFromCart(item().product)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
